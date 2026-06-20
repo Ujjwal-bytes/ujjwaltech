@@ -59,8 +59,8 @@ export default function PortfolioFooter() {
 
       console.log("📤 Sending payload:", payload);
 
-      // Send POST request to backend API
-      const response = await fetch("http://localhost:5000/api/contact", {
+      // Send POST request to Next.js API Route
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -81,7 +81,7 @@ export default function PortfolioFooter() {
         if (data.errors && data.errors.length > 0) {
           const errorMsg = data.errors.map((err: any) => {
             const key = Object.keys(err)[0];
-            return `${key}: ${err[key]}`;
+            return `${err[key]}`;
           }).join(", ");
           setErrorMessage(`Validation failed: ${errorMsg}`);
         } else {
@@ -92,7 +92,7 @@ export default function PortfolioFooter() {
       // Network or server error
       console.error("❌ Error sending message:", error);
       setErrorMessage(
-        "Could not connect to server. Please check if backend is running on port 5000."
+        "Something went wrong. Please try again later."
       );
     } finally {
       setIsLoading(false);
