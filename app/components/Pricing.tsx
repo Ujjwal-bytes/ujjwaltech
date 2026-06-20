@@ -133,6 +133,7 @@ export default function PricingSection() {
           ))}
         </div>
 
+        
         {/* Modular Detailed Feature Pop-up Layout */}
         {selectedPlan && (
           <div className="fixed inset-0 z-[999] flex items-center justify-center p-4">
