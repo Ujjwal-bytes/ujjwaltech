@@ -49,14 +49,13 @@ export async function POST(request: Request) {
 
     // Template variables setup
     const subject = `New Portfolio Inquiry from ${name}`;
-    const BRAND_COLOR = '#ff4500'; // Your accent/brand color (fits the previous orange theme)
-    const logoUrl = 'https://your-domain.com/your-logo.png'; // REPLACE with your actual logo URL
+    const BRAND_COLOR = '#ff4500'; // Orange theme color
     
     // Formatting variables for the buttons
     const cleanPhone = phone ? phone.replace(/\D/g, '') : '';
     const whatsappPhone = phone ? phone.replace(/\D/g, '') : '';
 
-    // Email HTML content using your professional template
+    // Email HTML content using your professional template (Text-based Ujjwal Tech brand)
     const htmlContent = `
       <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
       <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
@@ -129,8 +128,8 @@ export async function POST(request: Request) {
                   <td class="header-cell" style="background: ${BRAND_COLOR}; padding: 20px 24px;">
                     <table border="0" cellpadding="0" cellspacing="0" width="100%">
                       <tr>
-                        <td class="mobile-left" align="left" valign="middle">
-                          <img src="${logoUrl}" alt="Modular One" style="height: 26px; width: auto; display: inline-block; vertical-align: middle;">
+                        <td class="mobile-left" align="left" valign="middle" style="font-size: 20px; font-weight: 800; color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; letter-spacing: -0.5px;">
+                          Ujjwal Tech
                         </td>
                         <td class="mobile-right" align="right" valign="middle">
                           <span style="font-size: 12px; font-weight: 500; color: #ffffff; background-color: rgba(255,255,255,0.15); padding: 4px 12px; display: inline-block; vertical-align: middle; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
@@ -237,7 +236,7 @@ export async function POST(request: Request) {
                   <td class="footer-cell" style="padding: 12px 32px 24px 32px; text-align: center; background-color: #ffffff;">
                     <div style="background: #e2e8f0; height: 1px; font-size: 1px; line-height: 1px; margin-bottom: 16px; width: 100%;">&nbsp;</div>
                     <div style="font-size: 11px; color: #94a3b8; letter-spacing: 0.1px; line-height: 1.4; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
-                      Modular One • Golani Naka, Vasai East • <a href="mailto:support@modularone.com" style="color: ${BRAND_COLOR}; text-decoration: none; font-weight: 600; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">support@modularone.com</a>
+                      Ujjwal Tech • Vasai East • <a href="mailto:support@ujjwaltech.com" style="color: ${BRAND_COLOR}; text-decoration: none; font-weight: 600; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">support@ujjwaltech.com</a>
                     </div>
                   </td>
                 </tr>
