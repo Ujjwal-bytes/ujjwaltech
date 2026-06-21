@@ -269,12 +269,12 @@ export default function Hero() {
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
               >
                 <Image
-                  src="https://res.cloudinary.com/ddhotct77/image/upload/v1781895667/Gemini_Generated_Image_ya591iya591iya59_1_hnydv0.png"
+                  src="https://res.cloudinary.com/ddhotct77/image/upload/f_auto,q_70,w_800/v1781895667/Gemini_Generated_Image_ya591iya591iya59_1_hnydv0.png"
                   alt="Ujjwal Jha"
                   fill
                   priority
                   sizes="(max-width: 768px) 100vw, 400px"
-                  quality={85}
+                  quality={70}
                   className="object-contain object-bottom scale-105 filter drop-shadow-[0_2px_8px_rgba(0,0,0,0.06)]"
                 />
               </motion.div>

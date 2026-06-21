@@ -91,7 +91,7 @@ export default function Services() {
                   fill
                   className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
                   sizes="(max-width: 440px) 100vw, 440px"
-                  quality={80}
+                  quality={70}
                 />
               </div>
 
@@ -165,7 +165,7 @@ export default function Services() {
                   fill 
                   className="object-cover object-top opacity-50"
                   sizes="(max-width: 576px) 100vw, 576px"
-                  quality={80}
+                  quality={70}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#131315] via-transparent to-transparent" />
                 

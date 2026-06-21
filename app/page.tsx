@@ -1,9 +1,11 @@
-import Footer from "./components/Footer";
+import dynamic from "next/dynamic";
 import Hero from "./components/Hero";
-import Portfolio from "./components/Portfolio";
-import PricingSection from "./components/Pricing";
-import Services from "./components/Services";
-import Testimonials from "./components/Testimonials";
+
+const Services = dynamic(() => import("./components/Services"), { loading: () => null });
+const PricingSection = dynamic(() => import("./components/Pricing"), { loading: () => null });
+const Portfolio = dynamic(() => import("./components/Portfolio"), { loading: () => null });
+const Testimonials = dynamic(() => import("./components/Testimonials"), { loading: () => null });
+const Footer = dynamic(() => import("./components/Footer"), { loading: () => null });
 
 export default function Home() {
   // LocalBusiness Schema with OfferCatalog

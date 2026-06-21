@@ -80,9 +80,7 @@ export default function PricingSection() {
 
   return (
     <>
-      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-
-      <section className="w-full bg-[#f9fafb] py-24 px-6 md:px-16 flex flex-col items-center select-none" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+      <section className="w-full bg-[#f9fafb] py-24 px-6 md:px-12 flex flex-col items-center select-none">
         
         {/* Header Content */}
         <div className="text-center mb-16 max-w-2xl">
