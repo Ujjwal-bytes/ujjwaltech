@@ -35,7 +35,7 @@ export default function PortfolioTestimonials() {
     },
     {
       id: "client-2",
-      name: "Rajesh Patel",
+      name: "Megha Patel",
       role: "Director",
       company: "Mumbai Corporate Services",
       quote: "Working with Ujjwal Tech was a game-changer for our business. They delivered a sleek, responsive corporate website with seamless backend integration—all ahead of schedule. Their problem-solving skills are exceptional.",
