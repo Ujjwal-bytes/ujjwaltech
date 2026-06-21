@@ -113,7 +113,7 @@ export default function Hero() {
                   alt="Logo Icon"
                   fill
                   sizes="28px"
-                  quality={85}
+                  quality={75}
                   className="object-contain" // Bina background color ke clean image dikhegi
                 />
               </motion.div>

@@ -248,7 +248,7 @@ export default function PortfolioFooter() {
                     fill
                     className="object-contain"
                     sizes="40px"
-                    priority
+                    quality={75}
                   />
                 </div>
                 <span className="text-[22px] font-extrabold text-white tracking-[-0.5px]">

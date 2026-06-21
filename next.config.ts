@@ -8,7 +8,6 @@ const nextConfig: NextConfig = {
         hostname: 'res.cloudinary.com',
         pathname: '/**',
       },
-      // Add this block for Unsplash
       {
         protocol: 'https',
         hostname: 'images.unsplash.com',
@@ -16,6 +15,8 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  poweredByHeader: false,
+  compress: true,
 };
 
 export default nextConfig;

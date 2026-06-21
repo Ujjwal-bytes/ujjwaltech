@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 interface Testimonial {
   id: string;
@@ -116,11 +117,14 @@ export default function PortfolioTestimonials() {
                 </svg>
 
                 {/* Avatar Display Rounded Structure Layer */}
-                <div className="w-[72px] h-[72px] rounded-full overflow-hidden flex-shrink-0 border border-zinc-100 bg-zinc-50 shadow-sm">
-                  <img 
+                <div className="w-[72px] h-[72px] rounded-full overflow-hidden flex-shrink-0 border border-zinc-100 bg-zinc-50 shadow-sm relative">
+                  <Image
                     src={card.imageUrl} 
                     alt={`${card.name} profile`} 
-                    className="w-full h-full object-cover" 
+                    fill
+                    className="object-cover" 
+                    sizes="72px"
+                    quality={75}
                   />
                 </div>
 
