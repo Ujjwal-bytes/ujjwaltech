@@ -101,21 +101,22 @@ export default function Hero() {
           </div>
 
           {/* Center - Logo */}
-<div className="flex items-center gap-2.5 absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 cursor-pointer" onClick={() => scrollToSection('home')}>
+<div className="flex items-center gap-2.5 absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 cursor-pointer" onClick={() => scrollToSection('home')} aria-label="Ujjwal Tech Home">
   {/* Logo Image (Replacing the old background circle and 'U' text) */}
   <motion.div 
-    className="relative w-7 h-7 flex-shrink-0" // Chhoti image ke liye size width-7, height-7
-    whileHover={{ scale: 1.1, rotate: 10 }}
-    transition={{ duration: 0.3 }}
-  >
-    <Image
-      src="/logo.png" // Apne logo image ka path yahan dalein
-      alt="Logo Icon"
-      fill
-      priority
-      className="object-contain" // Bina background color ke clean image dikhegi
-    />
-  </motion.div>
+                className="relative w-7 h-7 flex-shrink-0" // Chhoti image ke liye size width-7, height-7
+                whileHover={{ scale: 1.1, rotate: 10 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Image
+                  src="/logo.png" // Apne logo image ka path yahan dalein
+                  alt="Logo Icon"
+                  fill
+                  sizes="28px"
+                  quality={85}
+                  className="object-contain" // Bina background color ke clean image dikhegi
+                />
+              </motion.div>
   
   {/* Text kept exactly as it was */}
   <span className="font-extrabold tracking-tight text-white text-base">Ujjwal Tech</span>
@@ -272,7 +273,8 @@ export default function Hero() {
                   alt="Ujjwal Jha"
                   fill
                   priority
-                  unoptimized
+                  sizes="(max-width: 768px) 100vw, 400px"
+                  quality={85}
                   className="object-contain object-bottom scale-105 filter drop-shadow-[0_2px_8px_rgba(0,0,0,0.06)]"
                 />
               </motion.div>

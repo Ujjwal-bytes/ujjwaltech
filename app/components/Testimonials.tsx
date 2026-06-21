@@ -80,6 +80,7 @@ export default function PortfolioTestimonials() {
             <button
               onClick={() => scrollToSection('contact')}
               className="inline-block bg-[#ff4500] text-white font-semibold text-[14px] px-[36px] py-[16px] rounded-[30px] shadow-[0_10px_24px_rgba(255,69,0,0.25)] transition-all duration-200 hover:opacity-95 hover:-translate-y-0.5 hover:shadow-[0_15px_30px_rgba(255,69,0,0.35)]"
+              aria-label="Contact Ujjwal Tech for services"
             >
               Start Your Project
             </button>

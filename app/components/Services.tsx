@@ -91,6 +91,7 @@ export default function Services() {
                   fill
                   className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
                   sizes="(max-width: 440px) 100vw, 440px"
+                  quality={80}
                 />
               </div>
 
@@ -130,6 +131,7 @@ export default function Services() {
                   <button 
                     onClick={() => setActiveModal(item)}
                     className="w-12 h-12 rounded-full bg-zinc-950 text-white flex items-center justify-center cursor-pointer transition-all duration-300 shadow-[0_4px_12px_rgba(0,0,0,0.15)] group-hover:bg-brand-orange group-hover:scale-105 shrink-0"
+                    aria-label={`View ${item.title} details`}
                   >
                     <ArrowUpRight className="w-5 h-5 transition-transform duration-300 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={2.5} />
                   </button>
@@ -162,6 +164,8 @@ export default function Services() {
                   alt={activeModal.title} 
                   fill 
                   className="object-cover object-top opacity-50"
+                  sizes="(max-width: 576px) 100vw, 576px"
+                  quality={80}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#131315] via-transparent to-transparent" />
                 
@@ -169,6 +173,7 @@ export default function Services() {
                 <button 
                   onClick={() => setActiveModal(null)}
                   className="absolute top-5 right-5 w-10 h-10 rounded-full bg-black/40 backdrop-blur-md border border-white/10 flex items-center justify-center text-zinc-400 hover:text-white cursor-pointer transition-colors z-20"
+                  aria-label="Close service details modal"
                 >
                   <X className="w-5 h-5" strokeWidth={2} />
                 </button>

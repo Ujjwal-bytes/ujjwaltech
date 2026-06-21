@@ -131,7 +131,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       
-      <div className="w-full">
+      <main className="w-full">
         <Hero />
         <Services />
      
@@ -139,7 +139,7 @@ export default function Home() {
         
         <Portfolio />
         
-        {/* Hand-Drawn SVG Divider */}
+        {/* Hand-drawn SVG Divider */}
         <div className="w-full bg-white overflow-hidden py-4">
           <svg 
             className="w-full h-auto" 
@@ -171,7 +171,7 @@ export default function Home() {
 
         <Testimonials />
         <Footer />
-      </div>
+      </main>
     </>
   );
 }
