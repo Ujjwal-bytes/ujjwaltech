@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface FooterLinkGroup {
   title: string;
@@ -236,13 +237,23 @@ export default function PortfolioFooter() {
           {/* Bottom Section - Navigation Links */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.8fr_1fr_1fr_1fr] gap-12 items-start text-left pt-2 w-full">
             
-            {/* Brand Section */}
+            {/* Brand Section - UPDATED WITH LOGO IMAGE */}
             <div className="flex flex-col gap-5">
-              <div className="flex items-center gap-2 text-[22px] font-extrabold text-white tracking-[-0.5px]">
-                <svg width="18" height="22" viewBox="0 0 13 22" fill="currentColor" className="text-[#ff4500]">
-                  <path d="M12.1 8.5H7.7L10.7.7C10.8.4 10.6 0 10.2 0H2.2C1.8 0 1.5.3 1.4.7L.0 11.7C-.1 12.1.2 12.5.6 12.5h4.4l-3 8.8c-.1.4.1.8.5.8.2 0 .3-.1.4-.2l9.6-12.2c.3-.4 0-.9-.4-.9z"/>
-                </svg>
-                <span>Ujjwal Tech</span>
+              <div className="flex items-center gap-3">
+                {/* Logo Image instead of SVG Icon */}
+                <div className="relative w-10 h-10 flex-shrink-0">
+                  <Image
+                    src="/logo.png"
+                    alt="Ujjwal Tech Logo"
+                    fill
+                    className="object-contain"
+                    sizes="40px"
+                    priority
+                  />
+                </div>
+                <span className="text-[22px] font-extrabold text-white tracking-[-0.5px]">
+                  Ujjwal Tech
+                </span>
               </div>
               
               <p className="text-[14px] text-zinc-400 leading-[1.6] max-w-[360px] font-normal">

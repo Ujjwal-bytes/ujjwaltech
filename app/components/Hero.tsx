@@ -101,16 +101,25 @@ export default function Hero() {
           </div>
 
           {/* Center - Logo */}
-          <div className="flex items-center gap-2.5 absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0">
-            <motion.span 
-              className="bg-brand-orange w-6 h-6 rounded-full flex items-center justify-center font-extrabold text-xs text-white shadow-[0_2px_10px_rgba(255,69,0,0.3)]"
-              whileHover={{ scale: 1.1, rotate: 360 }}
-              transition={{ duration: 0.5 }}
-            >
-              U
-            </motion.span>
-            <span className="font-extrabold tracking-tight text-white text-base">Ujjwal Tech</span>
-          </div>
+<div className="flex items-center gap-2.5 absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 cursor-pointer" onClick={() => scrollToSection('home')}>
+  {/* Logo Image (Replacing the old background circle and 'U' text) */}
+  <motion.div 
+    className="relative w-7 h-7 flex-shrink-0" // Chhoti image ke liye size width-7, height-7
+    whileHover={{ scale: 1.1, rotate: 10 }}
+    transition={{ duration: 0.3 }}
+  >
+    <Image
+      src="/logo.png" // Apne logo image ka path yahan dalein
+      alt="Logo Icon"
+      fill
+      priority
+      className="object-contain" // Bina background color ke clean image dikhegi
+    />
+  </motion.div>
+  
+  {/* Text kept exactly as it was */}
+  <span className="font-extrabold tracking-tight text-white text-base">Ujjwal Tech</span>
+</div>
 
           {/* Right - Desktop Navigation & Contact */}
           <div className="flex items-center justify-end gap-4 md:gap-8 lg:gap-10 text-zinc-400 tracking-wide min-w-[50px] md:min-w-[200px]">
