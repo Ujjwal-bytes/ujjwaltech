@@ -3,9 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "browserslist": [
-    ">0.2%",
+    "last 2 versions",
     "not dead",
-    "not op_mini all"
+    "not op_mini all",
+    "not ie 11",
+    "not android 4.4.3-4.4.4",
+    "> 0.5%"
   ],
   "scripts": {
     "dev": "next dev",
