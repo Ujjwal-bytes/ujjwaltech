@@ -186,15 +186,15 @@ export default function Hero() {
       {/* Main Content */}
       <div className="flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-12 w-full mx-auto relative mt-8 flex-1 z-10">
         <div className="w-full max-w-7xl mx-auto flex flex-col items-center">
-          {/* Hello Badge */}
+          {/* Hello Badge - UPDATED */}
           <div className="relative border border-zinc-200 bg-white rounded-full px-5 py-1.5 text-xs font-semibold text-zinc-800 mb-3 shadow-sm tracking-wide z-20">
-            Welcome to Ujjwal Tech
+            Building Digital Dreams
             <div className="absolute -top-2.5 -right-2.5" aria-hidden="true">
               <ArrowUpRight className="w-4 h-4 text-brand-orange" strokeWidth={3} />
             </div>
           </div>
 
-          {/* Main Title */}
+          {/* Main Title - UPDATED */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[82px] font-extrabold tracking-[-0.03em] max-w-5xl leading-[1.05] text-[#111111] text-center mb-3">
             Professional{" "}
             <span className="text-brand-orange inline-block">
@@ -206,15 +206,15 @@ export default function Hero() {
 
           <div className="w-full grid grid-cols-1 md:grid-cols-3 items-end relative z-10 mt-2">
 
-            {/* Left Column - Testimonial */}
+            {/* Left Column - Testimonial - UPDATED */}
             <div className="flex flex-col items-center md:items-start text-center md:text-left max-w-[250px] justify-self-center md:justify-self-start pb-4 order-2 md:order-1">
               <span className="text-5xl text-zinc-300 font-serif leading-none h-3 select-none mb-1 block" aria-hidden="true">"</span>
               <p className="text-xs text-zinc-500 font-medium leading-relaxed">
                 Ujjwal Tech delivered our corporate website on time with exceptional quality. Highly recommended!
               </p>
               <div className="mt-5 md:mt-7">
-                <h3 className="text-3xl font-extrabold text-[#111111] tracking-tight">450+</h3>
-                <span className="text-[11px] text-zinc-400 font-bold block uppercase tracking-wider mt-0.5">Mumbai Clients</span>
+                <h3 className="text-3xl font-bold text-[#111111] tracking-tight">Quality First</h3>
+                <span className="text-[11px] text-zinc-400 font-bold block uppercase tracking-wider mt-0.5">Client Focused</span>
               </div>
             </div>
 
@@ -238,20 +238,25 @@ export default function Hero() {
                 />
               </div>
 
-              {/* Curved Dotted Arrow */}
-              <div className="absolute left-[-90px] bottom-20 hidden md:block z-20 pointer-events-none select-none" aria-hidden="true">
-                <svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g>
-                    <path
-                      d="M25 135 C 45 132, 60 128, 65 115 C 72 100, 48 70, 35 90 C 20 112, 60 135, 85 110 C 100 95, 100 50, 120 30 C 126 24, 134 22, 142 24"
-                      stroke="#111111" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"
-                    />
-                    <g>
-                      <path d="M132 18 L146 25 L134 32 Z" fill="#111111" stroke="#111111" strokeWidth="1" strokeLinejoin="round" />
-                    </g>
-                  </g>
-                </svg>
-              </div>
+            {/* Curved Dotted Arrow */}
+<div className="absolute left-[-90px] bottom-20 hidden md:block z-20 pointer-events-none select-none" aria-hidden="true">
+  <svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g>
+      <path
+        d="M25 135 C 45 132, 60 128, 65 115 C 72 100, 48 70, 35 90 C 20 112, 60 135, 85 110 C 100 95, 100 50, 120 30 C 126 24, 134 22, 142 24"
+        stroke="#111111" 
+        strokeWidth="2.5" 
+        strokeLinecap="round" 
+        strokeLinejoin="round" 
+        fill="none"
+        strokeDasharray="6 6"
+      />
+      <g>
+        <path d="M132 18 L146 25 L134 32 Z" fill="#111111" stroke="#111111" strokeWidth="1" strokeLinejoin="round" />
+      </g>
+    </g>
+  </svg>
+</div>
 
               {/* Action Buttons */}
               <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 flex items-center bg-white p-1 rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.12)] border border-zinc-100 min-w-[280px] z-30">
@@ -273,7 +278,7 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Right Column - Stats */}
+            {/* Right Column - Stats - UPDATED */}
             <div className="flex flex-col items-center md:items-end text-center md:text-right max-w-[240px] justify-self-center md:justify-self-end pb-4 order-3">
               <div className="flex gap-0.5 text-brand-orange text-xs mb-1 select-none" aria-hidden="true">
                 {[...Array(5)].map((_, i) => (
@@ -281,8 +286,8 @@ export default function Hero() {
                 ))}
               </div>
               <div>
-                <h3 className="text-3xl font-extrabold text-[#111111] tracking-tight">10 Years</h3>
-                <span className="text-[11px] text-zinc-400 font-bold block uppercase tracking-wider mt-0.5">Experts</span>
+                <h3 className="text-3xl font-bold text-[#111111] tracking-tight">Full Support</h3>
+                <span className="text-[11px] text-zinc-400 font-bold block uppercase tracking-wider mt-0.5">Always Available</span>
               </div>
               <div className="w-full border-t border-zinc-200 mt-7 md:mt-9" aria-hidden="true" />
             </div>
