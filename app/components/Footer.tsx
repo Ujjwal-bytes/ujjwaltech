@@ -216,7 +216,7 @@ export default function PortfolioFooter() {
                   disabled={isLoading}
                   className="bg-[#ff4500] text-white font-bold text-[14px] tracking-wide uppercase px-8 py-4 rounded-2xl hover:bg-orange-600 transition-colors w-full shadow-lg shadow-orange-950/20 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {isLoading ? "Sending..." : "Send Inquiry Blueprint"}
+                  {isLoading ? "Sending..." : "Send Inquiry"}
                 </button>
 
                 {/* Success/Error Messages */}
