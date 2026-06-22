@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://ujjwaltech.in/sitemap.xml',
+    sitemap: 'https://ujjwaltech.site/sitemap.xml',
   };
 }

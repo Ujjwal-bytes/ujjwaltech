@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next';
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: 'https://ujjwaltech.in',
+      url: 'https://ujjwaltech.site',
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1,

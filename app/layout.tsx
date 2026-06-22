@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: "Ujjwal Tech | Web Development Company in Mumbai",
   description:
     "Ujjwal Tech - Professional web development, corporate website design, e-commerce solutions, Google Ads, Facebook Ads & SEO packages in Mumbai.",
-  metadataBase: new URL("https://ujjwaltech.in"),
+  metadataBase: new URL("https://ujjwaltech.site"),
   
   // ========== UPDATED ICONS SECTION ==========
   icons: {
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: "Ujjwal Tech | Web Development Company in Mumbai",
     description:
       "Ujjwal Tech - Professional web development, corporate website design, e-commerce solutions, Google Ads, Facebook Ads & SEO packages in Mumbai.",
-    url: "https://ujjwaltech.in",
+    url: "https://ujjwaltech.site",
     siteName: "Ujjwal Tech",
     locale: "en_IN",
     type: "website",
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
     google: "your-google-verification-code", // Add your Google verification code
   },
   alternates: {
-    canonical: "https://ujjwaltech.in",
+    canonical: "https://ujjwaltech.site",
   },
 };
 

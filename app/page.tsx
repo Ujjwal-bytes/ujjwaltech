@@ -14,7 +14,7 @@ export default function Home() {
     "@type": "LocalBusiness",
     "name": "Ujjwal Tech",
     "description": "Ujjwal Tech - Professional web development, corporate website design, e-commerce solutions, Google Ads, Facebook Ads & SEO packages in Mumbai.",
-    "url": "https://ujjwaltech.in",
+    "url": "https://ujjwaltech.site",
     "telephone": "+91-77700-74667",
     "priceRange": "₹2,999 - ₹30,000",
     "address": {
