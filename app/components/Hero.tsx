@@ -211,14 +211,12 @@ export default function Hero() {
             initial="hidden"
             animate={isMenuOpen ? "visible" : "hidden"}
             exit="exit"
-            role="menu"
             aria-label="Mobile navigation menu"
           >
             <nav className="flex flex-col p-3 gap-1">
               <button
                 onClick={() => { scrollToSection('home'); setIsMenuOpen(false); }}
                 className="text-brand-orange font-bold text-left px-4 py-3 rounded-xl hover:bg-white/5 transition-colors w-full"
-                role="menuitem"
               >
                 Home
               </button>
@@ -227,7 +225,6 @@ export default function Hero() {
                   key={section}
                   onClick={() => { scrollToSection(section); setIsMenuOpen(false); }}
                   className="text-zinc-300 font-medium text-left px-4 py-3 rounded-xl hover:bg-white/5 hover:text-white transition-colors w-full capitalize"
-                  role="menuitem"
                 >
                   {section === 'process' ? 'Portfolio' : section}
                 </button>
@@ -236,7 +233,6 @@ export default function Hero() {
               <button
                 onClick={() => { scrollToSection('contact'); setIsMenuOpen(false); }}
                 className="bg-brand-orange text-white font-bold text-center px-4 py-3.5 rounded-xl hover:bg-orange-600 active:scale-[0.99] transition-all w-full shadow-lg shadow-brand-orange/20"
-                role="menuitem"
               >
                 Contact
               </button>

@@ -74,9 +74,9 @@ export default function PortfolioProcess() {
             </span>
             
             <div className="relative w-fit mb-6">
-              <h1 className="text-4xl md:text-[44px] font-extrabold text-[#111111] tracking-[-1px] leading-[1.2]">
+              <h2 className="text-4xl md:text-[44px] font-extrabold text-[#111111] tracking-[-1px] leading-[1.2]">
                 Our Work Process
-              </h1>
+              </h2>
               {/* Hand-drawn underline vector marker */}
               <svg className="absolute left-0 bottom-[-12px] w-full h-3 text-brand-orange" viewBox="0 0 300 12" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                 <path d="M4 8.5C65 5 180 3 296 7.5M15 10C95 7.5 190 6.5 270 9" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" opacity="0.8"/>
