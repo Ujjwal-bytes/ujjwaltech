@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { ArrowUpRight, Star, Menu, X } from "lucide-react";
-import { motion, type Variants } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 
 export default function Hero() {
@@ -15,7 +14,7 @@ export default function Hero() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -43,58 +42,9 @@ export default function Hero() {
 
   const scrollToSection = (id: string) => {
     setIsMenuOpen(false);
-    setTimeout(() => {
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 100);
-  };
-
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.2 } },
-  };
-  const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.4, 0.25, 1] } },
-  };
-  const navbarVariants: Variants = {
-    hidden: { opacity: 0, y: -20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.4, 0.25, 1], delay: 0.3 } },
-  };
-  const imageVariants: Variants = {
-    hidden: { opacity: 0, scale: 0.9, y: 20 },
-    visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.4, 0.25, 1], delay: 0.5 } },
-  };
-  const buttonVariants: Variants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.4, 0.25, 1], delay: 1 } },
-    hover: { scale: 1.05, transition: { duration: 0.3 } },
-    tap: { scale: 0.95, transition: { duration: 0.1 } },
-  };
-  const statsVariants: Variants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: (delay: number = 0) => ({
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.6, delay, ease: [0.25, 0.4, 0.25, 1] },
-    }),
-  };
-
-  const menuVariants: Variants = {
-    hidden: { opacity: 0, y: -20, height: 0 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      height: "auto",
-      transition: { duration: 0.4, ease: [0.25, 0.4, 0.25, 1] }
-    },
-    exit: {
-      opacity: 0,
-      y: -20,
-      height: 0,
-      transition: { duration: 0.3, ease: [0.25, 0.4, 0.25, 1] }
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -102,14 +52,11 @@ export default function Hero() {
     <section id="home" className="relative w-full min-h-screen bg-white text-[#111111] font-sans flex flex-col pt-5 pb-8 overflow-hidden select-none">
 
       {/* Sticky Navbar */}
-      <motion.div
-        className={`w-full px-4 sm:px-6 lg:px-8 flex-shrink-0 sticky top-0 pt-4 md:pt-6 z-[100] transition-all duration-500 ${isScrolled ? 'bg-white/40 backdrop-blur-md pb-4 border-b border-zinc-200/50' : 'bg-transparent'
+      <div
+        className={`w-full px-4 sm:px-6 lg:px-8 flex-shrink-0 sticky top-0 pt-4 md:pt-6 z-[100] transition-all duration-300 ${isScrolled ? 'bg-white/40 backdrop-blur-md pb-4 border-b border-zinc-200/50' : 'bg-transparent'
           }`}
-        variants={navbarVariants}
-        initial="hidden"
-        animate="visible"
       >
-        <header className={`bg-[#111111] text-white rounded-full px-5 sm:px-8 py-3 grid grid-cols-3 items-center text-[13px] font-medium max-w-7xl mx-auto relative transition-all duration-500 border border-zinc-800/50 ${isScrolled
+        <header className={`bg-[#111111] text-white rounded-full px-5 sm:px-8 py-3 grid grid-cols-3 items-center text-[13px] font-medium max-w-7xl mx-auto relative transition-all duration-300 border border-zinc-800/50 ${isScrolled
             ? 'shadow-[0_20px_40px_rgba(0,0,0,0.3)] bg-black scale-[0.98]'
             : 'shadow-[0_14px_45px_rgba(0,0,0,0.15)]'
           }`}>
@@ -145,21 +92,17 @@ export default function Hero() {
             onClick={() => scrollToSection('home')}
             aria-label="Ujjwal Tech Home"
           >
-            <motion.div
-              className="relative w-7 h-7 flex-shrink-0"
-              whileHover={{ scale: 1.1, rotate: 5 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            >
+            <div className="relative w-7 h-7 flex-shrink-0">
               <Image
                 src="/logo.png"
                 alt="Ujjwal Tech Logo"
                 fill
                 sizes="28px"
-                quality={85}
+                quality={75}
                 className="object-contain group-hover:brightness-110 transition-all"
                 priority
               />
-            </motion.div>
+            </div>
             <span className="font-extrabold tracking-tight text-white text-base whitespace-nowrap bg-gradient-to-r from-white via-zinc-200 to-zinc-400 bg-clip-text text-transparent">
               Ujjwal Tech
             </span>
@@ -204,163 +147,106 @@ export default function Hero() {
           </div>
 
           {/* Mobile Menu Dropdown */}
-          <motion.div
-            ref={menuRef}
-            className="absolute top-full left-0 right-0 mt-3 bg-[#111111]/95 backdrop-blur-xl rounded-2xl overflow-hidden shadow-[0_24px_60px_rgba(0,0,0,0.5)] md:hidden border border-zinc-800/80 mx-2 grid-cols-1"
-            variants={menuVariants}
-            initial="hidden"
-            animate={isMenuOpen ? "visible" : "hidden"}
-            exit="exit"
-            aria-label="Mobile navigation menu"
-          >
-            <nav className="flex flex-col p-3 gap-1">
-              <button
-                onClick={() => { scrollToSection('home'); setIsMenuOpen(false); }}
-                className="text-brand-orange font-bold text-left px-4 py-3 rounded-xl hover:bg-white/5 transition-colors w-full"
-              >
-                Home
-              </button>
-              {['services', 'pricing', 'process', 'testimonials'].map((section) => (
+          {isMenuOpen && (
+            <div
+              ref={menuRef}
+              className="absolute top-full left-0 right-0 mt-3 bg-[#111111]/95 backdrop-blur-xl rounded-2xl overflow-hidden shadow-[0_24px_60px_rgba(0,0,0,0.5)] md:hidden border border-zinc-800/80 mx-2 grid-cols-1"
+              aria-label="Mobile navigation menu"
+            >
+              <nav className="flex flex-col p-3 gap-1">
                 <button
-                  key={section}
-                  onClick={() => { scrollToSection(section); setIsMenuOpen(false); }}
-                  className="text-zinc-300 font-medium text-left px-4 py-3 rounded-xl hover:bg-white/5 hover:text-white transition-colors w-full capitalize"
+                  onClick={() => { scrollToSection('home'); setIsMenuOpen(false); }}
+                  className="text-brand-orange font-bold text-left px-4 py-3 rounded-xl hover:bg-white/5 transition-colors w-full"
                 >
-                  {section === 'process' ? 'Portfolio' : section}
+                  Home
                 </button>
-              ))}
-              <div className="border-t border-zinc-800/60 my-2 mx-2" aria-hidden="true"></div>
-              <button
-                onClick={() => { scrollToSection('contact'); setIsMenuOpen(false); }}
-                className="bg-brand-orange text-white font-bold text-center px-4 py-3.5 rounded-xl hover:bg-orange-600 active:scale-[0.99] transition-all w-full shadow-lg shadow-brand-orange/20"
-              >
-                Contact
-              </button>
-            </nav>
-          </motion.div>
+                {['services', 'pricing', 'process', 'testimonials'].map((section) => (
+                  <button
+                    key={section}
+                    onClick={() => { scrollToSection(section); setIsMenuOpen(false); }}
+                    className="text-zinc-300 font-medium text-left px-4 py-3 rounded-xl hover:bg-white/5 hover:text-white transition-colors w-full capitalize"
+                  >
+                    {section === 'process' ? 'Portfolio' : section}
+                  </button>
+                ))}
+                <div className="border-t border-zinc-800/60 my-2 mx-2" aria-hidden="true"></div>
+                <button
+                  onClick={() => { scrollToSection('contact'); setIsMenuOpen(false); }}
+                  className="bg-brand-orange text-white font-bold text-center px-4 py-3.5 rounded-xl hover:bg-orange-600 active:scale-[0.99] transition-all w-full shadow-lg shadow-brand-orange/20"
+                >
+                  Contact
+                </button>
+              </nav>
+            </div>
+          )}
 
         </header>
-      </motion.div>
+      </div>
 
       {/* Main Content */}
-      <motion.div
-        className="flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-12 w-full mx-auto relative mt-8 flex-1 z-10"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
+      <div className="flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-12 w-full mx-auto relative mt-8 flex-1 z-10">
         <div className="w-full max-w-7xl mx-auto flex flex-col items-center">
           {/* Hello Badge */}
-          <motion.div
-            className="relative border border-zinc-200 bg-white rounded-full px-5 py-1.5 text-xs font-semibold text-zinc-800 mb-3 shadow-sm tracking-wide z-20"
-            variants={itemVariants}
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.3 }}
-          >
+          <div className="relative border border-zinc-200 bg-white rounded-full px-5 py-1.5 text-xs font-semibold text-zinc-800 mb-3 shadow-sm tracking-wide z-20">
             Welcome to Ujjwal Tech
-            <motion.div
-              className="absolute -top-2.5 -right-2.5"
-              animate={{ rotate: [0, 15, -15, 0] }}
-              transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-              aria-hidden="true"
-            >
+            <div className="absolute -top-2.5 -right-2.5" aria-hidden="true">
               <ArrowUpRight className="w-4 h-4 text-brand-orange" strokeWidth={3} />
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
           {/* Main Title */}
-          <motion.h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[82px] font-extrabold tracking-[-0.03em] max-w-5xl leading-[1.05] text-[#111111] text-center mb-3"
-            variants={itemVariants}
-          >
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[82px] font-extrabold tracking-[-0.03em] max-w-5xl leading-[1.05] text-[#111111] text-center mb-3">
             Professional{" "}
-            <motion.span
-              className="text-brand-orange inline-block"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
+            <span className="text-brand-orange inline-block">
               Web Development
-            </motion.span>{" "}
+            </span>{" "}
             <br />
             in Mumbai
-          </motion.h1>
+          </h1>
 
           <div className="w-full grid grid-cols-1 md:grid-cols-3 items-end relative z-10 mt-2">
 
             {/* Left Column - Testimonial */}
-            <motion.div
-              className="flex flex-col items-center md:items-start text-center md:text-left max-w-[250px] justify-self-center md:justify-self-start pb-4 order-2 md:order-1"
-              variants={statsVariants}
-              custom={0.8}
-            >
+            <div className="flex flex-col items-center md:items-start text-center md:text-left max-w-[250px] justify-self-center md:justify-self-start pb-4 order-2 md:order-1">
               <span className="text-5xl text-zinc-300 font-serif leading-none h-3 select-none mb-1 block" aria-hidden="true">"</span>
               <p className="text-xs text-zinc-500 font-medium leading-relaxed">
                 Ujjwal Tech delivered our corporate website on time with exceptional quality. Highly recommended!
               </p>
-              <motion.div
-                className="mt-5 md:mt-7"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
+              <div className="mt-5 md:mt-7">
                 <h3 className="text-3xl font-extrabold text-[#111111] tracking-tight">450+</h3>
                 <span className="text-[11px] text-zinc-400 font-bold block uppercase tracking-wider mt-0.5">Mumbai Clients</span>
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
 
             {/* Center Column - Image */}
-            <motion.div
-              className="relative w-full max-w-[290px] md:max-w-[320px] mx-auto flex flex-col items-center justify-end order-1 md:order-2 my-4 md:my-0"
-              variants={imageVariants}
-            >
+            <div className="relative w-full max-w-[290px] md:max-w-[320px] mx-auto flex flex-col items-center justify-end order-1 md:order-2 my-4 md:my-0">
               <div className="absolute inset-x-0 bottom-0 aspect-square bg-brand-orange rounded-full -z-10 shadow-[0_15px_45px_rgba(255,69,0,0.18)]" />
 
-              <motion.div
-                className="relative w-[110%] aspect-[1/1.05] -mb-1 select-none pointer-events-none overflow-hidden"
-                animate={{ y: [0, -5, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              >
+              <div className="relative w-[110%] aspect-[1/1.05] -mb-1 select-none pointer-events-none overflow-hidden">
                 <Image
-                  src="https://res.cloudinary.com/ddhotct77/image/upload/f_auto,q_85,w_800/v1781895667/Gemini_Generated_Image_ya591iya591iya59_1_hnydv0.png"
+                  src="https://res.cloudinary.com/ddhotct77/image/upload/f_auto,q_70,w_800/v1781895667/Gemini_Generated_Image_ya591iya591iya59_1_hnydv0.png"
                   alt="Ujjwal Jha - Web Developer"
                   fill
                   priority
                   sizes="(max-width: 768px) 100vw, 400px"
-                  quality={85}
+                  quality={70}
                   className="object-contain object-bottom scale-105 filter drop-shadow-[0_2px_8px_rgba(0,0,0,0.06)]"
                   onError={(e) => {
                     const target = e.currentTarget;
                     target.src = '/fallback-hero-image.png';
                   }}
                 />
-              </motion.div>
+              </div>
 
               {/* Curved Dotted Arrow */}
               <div className="absolute left-[-90px] bottom-20 hidden md:block z-20 pointer-events-none select-none" aria-hidden="true">
                 <svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <style>
-                      {`
-                        @keyframes revealDotsSequential {
-                          0% { stroke-dasharray: 0 400; opacity: 0; }
-                          1% { opacity: 1; }
-                          100% { stroke-dasharray: 6 7; opacity: 1; }
-                        }
-                        @keyframes fadeInArrowHead {
-                          0%, 95% { opacity: 0; }
-                          100% { opacity: 1; }
-                        }
-                        .dot-by-dot-curve { animation: revealDotsSequential 2.2s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
-                        .arrow-tip-static { opacity: 0; animation: fadeInArrowHead 0.15s ease-out 2s forwards; }
-                      `}
-                    </style>
-                  </defs>
                   <g>
                     <path
-                      className="dot-by-dot-curve"
                       d="M25 135 C 45 132, 60 128, 65 115 C 72 100, 48 70, 35 90 C 20 112, 60 135, 85 110 C 100 95, 100 50, 120 30 C 126 24, 134 22, 142 24"
                       stroke="#111111" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"
                     />
-                    <g className="arrow-tip-static">
+                    <g>
                       <path d="M132 18 L146 25 L134 32 Z" fill="#111111" stroke="#111111" strokeWidth="1" strokeLinejoin="round" />
                     </g>
                   </g>
@@ -368,59 +254,42 @@ export default function Hero() {
               </div>
 
               {/* Action Buttons */}
-              <motion.div
-                className="absolute -bottom-5 left-1/2 -translate-x-1/2 flex items-center bg-white p-1 rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.12)] border border-zinc-100 min-w-[280px] z-30"
-                variants={buttonVariants}
-              >
-                <motion.button
+              <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 flex items-center bg-white p-1 rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.12)] border border-zinc-100 min-w-[280px] z-30">
+                <button
                   onClick={() => scrollToSection('pricing')}
                   className="flex-1 bg-brand-orange text-white text-center py-3.5 px-5 rounded-full font-bold text-xs tracking-wide transition flex items-center justify-center gap-1 whitespace-nowrap"
-                  variants={buttonVariants}
-                  whileHover="hover"
-                  whileTap="tap"
                   aria-label="View our pricing plans"
                 >
                   View Pricing
                   <ArrowUpRight className="w-3.5 h-3.5" strokeWidth={3} aria-hidden="true" />
-                </motion.button>
-                <motion.button
+                </button>
+                <button
                   onClick={() => scrollToSection('contact')}
                   className="flex-1 text-[#111111] font-bold text-xs tracking-wide text-center py-3.5 px-5 transition whitespace-nowrap"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
                   aria-label="Get a free quote"
                 >
                   Get a Quote
-                </motion.button>
-              </motion.div>
-            </motion.div>
+                </button>
+              </div>
+            </div>
 
             {/* Right Column - Stats */}
-            <motion.div
-              className="flex flex-col items-center md:items-end text-center md:text-right max-w-[240px] justify-self-center md:justify-self-end pb-4 order-3"
-              variants={statsVariants}
-              custom={1}
-            >
-              <motion.div
-                className="flex gap-0.5 text-brand-orange text-xs mb-1 select-none"
-                animate={{ scale: [1, 1.1, 1] }}
-                transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
-                aria-hidden="true"
-              >
+            <div className="flex flex-col items-center md:items-end text-center md:text-right max-w-[240px] justify-self-center md:justify-self-end pb-4 order-3">
+              <div className="flex gap-0.5 text-brand-orange text-xs mb-1 select-none" aria-hidden="true">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-3 h-3 fill-current" />
                 ))}
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 300 }}>
+              </div>
+              <div>
                 <h3 className="text-3xl font-extrabold text-[#111111] tracking-tight">10 Years</h3>
                 <span className="text-[11px] text-zinc-400 font-bold block uppercase tracking-wider mt-0.5">Experts</span>
-              </motion.div>
+              </div>
               <div className="w-full border-t border-zinc-200 mt-7 md:mt-9" aria-hidden="true" />
-            </motion.div>
+            </div>
 
           </div>
         </div>
-      </motion.div>
+      </div>
 
     </section>
   );
