@@ -80,7 +80,7 @@ export default function PricingSection() {
 
   return (
     <>
-      <section className="w-full bg-[#f9fafb] py-24 px-6 md:px-12 flex flex-col items-center select-none">
+      <section id="pricing" className="w-full bg-[#f9fafb] py-24 px-6 md:px-12 flex flex-col items-center select-none">
         
         {/* Header Content */}
         <div className="text-center mb-16 max-w-2xl">
