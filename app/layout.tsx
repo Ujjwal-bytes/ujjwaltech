@@ -150,7 +150,17 @@ export const metadata: Metadata = {
   },
 };
 
-// ========== JSON-LD SCHEMA MARKUP ==========
+// ========== JSON-LD SCHEMAS ==========
+
+// 1. WebSite Schema (Fixes the Google Search Site Name)
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Ujjwal Tech",
+  "url": "https://ujjwaltech.site"
+};
+
+// 2. LocalBusiness Schema
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
@@ -203,6 +213,7 @@ const localBusinessSchema = {
   }
 };
 
+// 3. FAQ Schema
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -267,13 +278,22 @@ export default function RootLayout({
         {/* ========== META TAGS ========== */}
         <meta name="theme-color" content="#0a1628" />
         
-        {/* ========== JSON-LD SCHEMA ========== */}
+        {/* ========== JSON-LD SCHEMAS ========== */}
+        {/* WebSite Schema (Google Site Name Fix) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteSchema),
+          }}
+        />
+        {/* Local Business Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(localBusinessSchema),
           }}
         />
+        {/* FAQ Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
