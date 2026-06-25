@@ -8,13 +8,13 @@ const Testimonials = dynamic(() => import("./components/Testimonials"), { loadin
 const Footer = dynamic(() => import("./components/Footer"), { loading: () => null });
 
 export default function Home() {
-  // LocalBusiness Schema with OfferCatalog
+  // ========== LOCAL BUSINESS SCHEMA (PAGE-SPECIFIC) ==========
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Ujjwal Tech",
     "description": "Ujjwal Tech - Professional web development, corporate website design, e-commerce solutions, Google Ads, Facebook Ads & SEO packages in Mumbai.",
-    "url": "https://ujjwaltech.site",
+    "url": "https://www.ujjwaltech.site",
     "telephone": "+91-77700-74667",
     "priceRange": "₹2,999 - ₹30,000",
     "address": {
@@ -85,36 +85,161 @@ export default function Home() {
       "Google Ads",
       "Facebook Ads",
       "Search Engine Optimization"
-    ]
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "150"
+    }
   };
 
-  // FAQPage Schema (no UI changes)
+  // ========== FAQ SCHEMA (18 QUESTIONS - COVERS ALL KEYWORDS) ==========
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
       {
         "@type": "Question",
+        "name": "How much does a website cost in Mumbai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ujjwal Tech offers affordable website packages starting from ₹4,999 for business websites. Corporate websites start from ₹9,999 and e-commerce solutions start from ₹11,999. Contact us for a custom quote based on your specific requirements."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which is the best web development company in Mumbai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ujjwal Tech is recognized as one of the best web development companies in Mumbai, offering professional website design, e-commerce development, digital marketing, and SEO services with proven results and client satisfaction. We have a 4.8/5 rating from 150+ clients."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to develop a website?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A standard business website is delivered within 48 hours. Advanced dynamic websites take 3-5 days, and e-commerce websites require 5-7 business days depending on complexity."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer affordable website packages for small businesses?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, Ujjwal Tech specializes in affordable website development for small businesses. We offer customized packages starting from ₹4,999 that include professional design, responsive layout, and basic SEO optimization."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How to find a reliable web designer near me in Mumbai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To find a reliable web designer near you in Mumbai, look for agencies with proven experience, client testimonials, and a strong portfolio. Ujjwal Tech has 100+ satisfied clients and offers affordable, professional web development services."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you provide SEO services in Mumbai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, Ujjwal Tech provides comprehensive SEO services in Mumbai including on-page optimization, off-page link building, Google Ads management, and Facebook Ads setup to help businesses rank higher and generate more leads."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I get a custom website on a budget?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely! Ujjwal Tech offers custom website development on a budget starting from ₹4,999. We provide professional, responsive, and SEO-friendly websites that look premium without breaking the bank."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the price of a professional website in Mumbai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The price of a professional website in Mumbai ranges from ₹4,999 to ₹30,000 depending on features and complexity. Ujjwal Tech offers transparent pricing with no hidden costs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How to choose a web developer for my small business?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "When choosing a web developer for your small business, look for experience, portfolio, client testimonials, and clear pricing. Ujjwal Tech specializes in affordable, high-quality websites for small businesses in Mumbai."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is included in a Ujjwal Tech website package?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ujjwal Tech website packages include professional design, responsive layout, SEO optimization, free hosting for 1 year, SSL certificate, and 30 days of free technical support."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a cheap website developer near me in Mumbai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, Ujjwal Tech is an affordable web development company in Mumbai offering cheap website design without compromising quality. Our packages start from just ₹4,999 with excellent results."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to build a professional website?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A professional business website takes 48 hours to build. Complex e-commerce or corporate websites with custom features can take 5-7 business days. Ujjwal Tech delivers fast without sacrificing quality."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best web development company in Mumbai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ujjwal Tech is among the top web development companies in Mumbai, known for affordable pricing, professional quality, and excellent client support. We have a 4.8/5 rating from 150+ clients."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How to find a web developer near me in Mumbai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can find a web developer near you in Mumbai by searching online directories, asking for referrals, or checking Google Business Profile listings. Ujjwal Tech is a leading web development company serving Mumbai and surrounding areas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer e-commerce website development in Mumbai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, Ujjwal Tech specializes in e-commerce website development in Mumbai. We build Shopify, WooCommerce, and custom e-commerce stores with payment gateway integration and full admin control."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does a corporate website cost in Mumbai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Corporate website costs in Mumbai range from ₹9,999 to ₹30,000 depending on features and complexity. Ujjwal Tech offers corporate website design with admin panel, payment integration, and full SEO optimization."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "What is the starting price for a business website in Mumbai?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ujjwal Tech offers business website packages starting at ₹4,999, including 15 pages, free hosting for 1 year, and an SSL certificate."
+          "text": "Ujjwal Tech offers business website packages starting at ₹4,999, including 15 pages, free hosting for 1 year, SSL certificate, and a professional business email ID."
         }
       },
       {
         "@type": "Question",
-        "name": "How long does it take to deliver a corporate website?",
+        "name": "How can I contact a web developer near me in Mumbai?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Standard corporate websites are delivered within 48 hours, while advanced dynamic or e-commerce solutions take 5-7 business days, depending on project complexity."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What support does Ujjwal Tech provide after delivery?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "All Ujjwal Tech packages include 30 days of free technical support, with optional annual maintenance contracts available for ongoing assistance."
+          "text": "You can contact Ujjwal Tech, a leading web development company in Mumbai, by visiting our contact page, calling +91-77700-74667, or emailing info@ujjwaltech.site. We offer free consultations!"
         }
       }
     ]
@@ -122,12 +247,13 @@ export default function Home() {
 
   return (
     <>
-      {/* LocalBusiness Schema */}
+      {/* ========== LOCAL BUSINESS SCHEMA ========== */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
-      {/* FAQPage Schema (no UI changes) */}
+      
+      {/* ========== FAQ SCHEMA ========== */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -136,9 +262,7 @@ export default function Home() {
       <main className="w-full">
         <Hero />
         <Services />
-     
         <PricingSection/>
-        
         <Portfolio />
         
         {/* Hand-drawn SVG Divider */}

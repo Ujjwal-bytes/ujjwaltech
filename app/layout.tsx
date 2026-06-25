@@ -25,23 +25,22 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.ujjwaltech.site"),
   title: {
-    default: "Ujjwal Tech | Best Web Development Company in Mumbai",
+    default: "Ujjwal Tech | Best Web Development Company in Mumbai - Affordable Website Design",
     template: "%s | Ujjwal Tech - Web Developers Mumbai",
   },
   description:
-    "Top-rated web development company in Mumbai offering affordable website design, e-commerce solutions, SEO, Google Ads & Facebook Ads. Get a free quote today!",
+    "Top-rated web development company in Mumbai offering affordable website design starting ₹4,999. E-commerce solutions, SEO, Google Ads & Facebook Ads. Get free quote!",
 
-  // ========== SIMPLIFIED ICONS - ONLY WHAT YOU HAVE ==========
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
 
-  // ========== OPEN GRAPH ==========
   openGraph: {
     title: "Ujjwal Tech - Best Web Development Company in Mumbai",
     description:
-      "Professional web development, corporate website design, e-commerce solutions, Google Ads, Facebook Ads & SEO packages in Mumbai. Affordable rates, proven results.",
+      "Professional web development, corporate website design, e-commerce solutions, Google Ads, Facebook Ads & SEO packages in Mumbai. Affordable rates from ₹4,999.",
     url: "https://www.ujjwaltech.site",
     siteName: "Ujjwal Tech",
     locale: "en_IN",
@@ -56,45 +55,30 @@ export const metadata: Metadata = {
       },
     ],
     emails: ["info@ujjwaltech.site"],
-    phoneNumbers: ["+91-XXXXXXXXXX"],
+    phoneNumbers: ["+91-77700-74667"],
     countryName: "India",
   },
 
-  // ========== TWITTER CARDS ==========
   twitter: {
     card: "summary_large_image",
     site: "@ujjwaltech",
     creator: "@ujjwaltech",
     title: "Ujjwal Tech - Best Web Development Company in Mumbai",
     description:
-      "Top web development company in Mumbai. Affordable website design, e-commerce, SEO, Google Ads & Facebook Ads services. Get a free quote!",
+      "Top web development company in Mumbai. Affordable website design, e-commerce, SEO, Google Ads & Facebook Ads. Packages from ₹4,999.",
     images: ["/twitter-image.jpg"],
   },
 
-  // ========== COMPREHENSIVE KEYWORDS ==========
   keywords: [
-    "web development company in Mumbai",
-    "web developer near me",
-    "website developer near me",
-    "affordable website developer",
-    "best web development company",
-    "professional web developers",
-    "Mumbai web development company",
-    "web design agency Mumbai",
-    "website development services Mumbai",
-    "e-commerce development Mumbai",
-    "corporate website design Mumbai",
-    "affordable website design packages",
-    "professional e-commerce web design",
-    "custom web development services",
-    "responsive website design",
-    "SEO services Mumbai",
-    "Google Ads management Mumbai",
-    "Facebook Ads agency Mumbai",
-    "digital marketing services",
-    "Ujjwal Tech",
-    "Ujjwal Tech web development",
-    "Ujjwal Tech Mumbai",
+    "Ujjwal Tech", "Ujjwal Tech web development", "Ujjwal Tech Mumbai",
+    "web development company in Mumbai", "website designer near me",
+    "web developer near me", "affordable website developer",
+    "best web development company", "professional web developers",
+    "Mumbai web development company", "e-commerce development Mumbai",
+    "corporate website design Mumbai", "affordable website design packages",
+    "responsive website design", "SEO services Mumbai",
+    "Google Ads management Mumbai", "Facebook Ads agency Mumbai",
+    "small business website", "startup website", "entrepreneur website",
   ],
 
   authors: [{ name: "Ujjwal Tech", url: "https://www.ujjwaltech.site/about" }],
@@ -121,6 +105,9 @@ export const metadata: Metadata = {
 
   alternates: {
     canonical: "https://www.ujjwaltech.site",
+    languages: {
+      "en-IN": "https://www.ujjwaltech.site",
+    },
   },
 
   category: "Technology",
@@ -140,7 +127,7 @@ export const metadata: Metadata = {
     "business:contact_data:postal_code": "400001",
     "business:contact_data:country": "India",
     "business:contact_data:email": "info@ujjwaltech.site",
-    "business:contact_data:phone_number": "+91-XXXXXXXXXX",
+    "business:contact_data:phone_number": "+91-77700-74667",
     "business:service:area": "Mumbai, Navi Mumbai, Thane, Pune",
     "business:service:type": "Web Development, Digital Marketing",
     "geo.region": "IN-MH",
@@ -150,27 +137,29 @@ export const metadata: Metadata = {
   },
 };
 
-// ========== JSON-LD SCHEMAS ==========
-
-// 1. WebSite Schema (Fixes the Google Search Site Name)
+// ========== SIRF YEH DO SCHEMAS LAYOUT MEIN (GLOBAL) ==========
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Ujjwal Tech",
-  "url": "https://www.ujjwaltech.site"
+  "url": "https://www.ujjwaltech.site",
+  "description": "Best web development company in Mumbai offering affordable website design, e-commerce solutions, SEO & digital marketing.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://www.ujjwaltech.site/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
 };
 
-// 2. LocalBusiness Schema
-const localBusinessSchema = {
+const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "@id": "https://www.ujjwaltech.site/#business",
+  "@type": "Organization",
   "name": "Ujjwal Tech",
   "description": "Best web development company in Mumbai offering affordable website design, e-commerce solutions, SEO, Google Ads & Facebook Ads services.",
   "url": "https://www.ujjwaltech.site",
   "logo": "https://www.ujjwaltech.site/favicon.ico",
   "image": "https://www.ujjwaltech.site/og-image.jpg",
-  "telephone": "+91-XXXXXXXXXX",
+  "telephone": "+91-77700-74667",
   "email": "info@ujjwaltech.site",
   "priceRange": "₹₹",
   "address": {
@@ -206,50 +195,10 @@ const localBusinessSchema = {
     { "@type": "City", "name": "Thane" },
     { "@type": "City", "name": "Pune" }
   ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "reviewCount": "150"
-  }
-};
-
-// 3. FAQ Schema
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How much does a website cost in Mumbai?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ujjwal Tech offers affordable website packages starting from ₹15,000 for basic websites. Corporate websites start from ₹25,000 and e-commerce solutions start from ₹40,000. Contact us for a custom quote based on your specific requirements."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Which is the best web development company in Mumbai?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ujjwal Tech is recognized as one of the best web development companies in Mumbai, offering professional website design, e-commerce development, digital marketing, and SEO services with proven results and client satisfaction."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How long does it take to develop a website?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A standard corporate website typically takes 2-4 weeks to develop. E-commerce websites require 4-8 weeks depending on complexity. We follow agile development methodology to deliver fast and efficient results."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you offer affordable website packages for small businesses?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, Ujjwal Tech specializes in affordable website development for small businesses. We offer customized packages starting from ₹15,000 that include professional design, responsive layout, and basic SEO optimization."
-      }
-    }
+  "sameAs": [
+    "https://facebook.com/ujjwaltech",
+    "https://instagram.com/ujjwaltech",
+    "https://linkedin.com/company/ujjwaltech"
   ]
 };
 
@@ -265,43 +214,39 @@ export default function RootLayout({
       dir="ltr"
     >
       <head>
-        {/* ========== FAVICON - ONLY WHAT YOU HAVE ========== */}
+        {/* Favicon */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         
-        {/* ========== PERFORMANCE OPTIMIZATION ========== */}
+        {/* Performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="anonymous" />
         
-        {/* ========== META TAGS ========== */}
+        {/* Meta Tags */}
         <meta name="theme-color" content="#0a1628" />
+        <meta name="geo.region" content="IN-MH" />
+        <meta name="geo.placename" content="Mumbai" />
+        <meta name="geo.position" content="19.0760;72.8777" />
+        <meta name="ICBM" content="19.0760, 72.8777" />
         
-        {/* ========== JSON-LD SCHEMAS ========== */}
-        {/* WebSite Schema (Google Site Name Fix) */}
+        {/* ========== SIRF 2 GLOBAL SCHEMAS ========== */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(websiteSchema),
           }}
         />
-        {/* Local Business Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(localBusinessSchema),
-          }}
-        />
-        {/* FAQ Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(faqSchema),
+            __html: JSON.stringify(organizationSchema),
           }}
         />
         
-        {/* ========== GOOGLE ANALYTICS ========== */}
+        {/* Google Analytics */}
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
