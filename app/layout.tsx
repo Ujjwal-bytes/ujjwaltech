@@ -23,7 +23,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ujjwaltech.site"),
+  metadataBase: new URL("https://www.ujjwaltech.site"),
   title: {
     default: "Ujjwal Tech | Best Web Development Company in Mumbai",
     template: "%s | Ujjwal Tech - Web Developers Mumbai",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     title: "Ujjwal Tech - Best Web Development Company in Mumbai",
     description:
       "Professional web development, corporate website design, e-commerce solutions, Google Ads, Facebook Ads & SEO packages in Mumbai. Affordable rates, proven results.",
-    url: "https://ujjwaltech.site",
+    url: "https://www.ujjwaltech.site",
     siteName: "Ujjwal Tech",
     locale: "en_IN",
     type: "website",
@@ -97,7 +97,7 @@ export const metadata: Metadata = {
     "Ujjwal Tech Mumbai",
   ],
 
-  authors: [{ name: "Ujjwal Tech", url: "https://ujjwaltech.site/about" }],
+  authors: [{ name: "Ujjwal Tech", url: "https://www.ujjwaltech.site/about" }],
   creator: "Ujjwal Tech",
   publisher: "Ujjwal Tech",
   
@@ -120,7 +120,7 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: "https://ujjwaltech.site",
+    canonical: "https://www.ujjwaltech.site",
   },
 
   category: "Technology",
@@ -157,19 +157,19 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Ujjwal Tech",
-  "url": "https://ujjwaltech.site"
+  "url": "https://www.ujjwaltech.site"
 };
 
 // 2. LocalBusiness Schema
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "@id": "https://ujjwaltech.site/#business",
+  "@id": "https://www.ujjwaltech.site/#business",
   "name": "Ujjwal Tech",
   "description": "Best web development company in Mumbai offering affordable website design, e-commerce solutions, SEO, Google Ads & Facebook Ads services.",
-  "url": "https://ujjwaltech.site",
-  "logo": "https://ujjwaltech.site/favicon.ico",
-  "image": "https://ujjwaltech.site/og-image.jpg",
+  "url": "https://www.ujjwaltech.site",
+  "logo": "https://www.ujjwaltech.site/favicon.ico",
+  "image": "https://www.ujjwaltech.site/og-image.jpg",
   "telephone": "+91-XXXXXXXXXX",
   "email": "info@ujjwaltech.site",
   "priceRange": "₹₹",
